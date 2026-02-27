@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPO MODERNO | Relojería de Vanguardia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --negro-puro: #050505;
+            --gris-oscuro: #121212;
+            --acento-dorado: #c5a059;
+            --blanco-suave: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--negro-puro);
+            color: var(--blanco-suave);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Navegación */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0,0,0,0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo { font-weight: 700; font-size: 1.5rem; letter-spacing: 3px; }
+        .logo span { color: var(--acento-dorado); }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--acento-dorado); }
+
+        /* Sección Hero */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--negro-puro)), 
+                        url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h2 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero p { font-weight: 300; font-size: 1.2rem; margin-bottom: 30px; opacity: 0.8; }
+
+        /* Botón Estilizado */
+        .btn-principal {
+            padding: 15px 40px;
+            background: var(--acento-dorado);
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: 0.4s;
+        }
+
+        .btn-principal:hover { background: white; transform: scale(1.05); }
+
+        /* Grid de Productos */
+        .seccion { padding: 80px 5%; }
+        .titulo-seccion { text-align: center; margin-bottom: 50px; font-size: 2rem; }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--gris-oscuro);
+            border: 1px solid #222;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover { border-color: var(--acento-dorado); }
+
+        .card img { width: 100%; height: auto; margin-bottom: 15px; }
+
+        .precio { color: var(--acento-dorado); font-size: 1.2rem; font-weight: bold; }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 40px 5%;
+            border-top: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-box { margin-bottom: 20px; min-width: 200px; }
+        .footer-box h4 { color: var(--acento-dorado); margin-bottom: 15px; }
+        
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            header { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">TEMPO<span>MODERNO</span></div>
+        <nav>
+            <a href="#coleccion">Colección</a>
+            <a href="#tecnologia">Tecnología</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>EL FUTURO ES MECÁNICO</h2>
+        <p>Precisión suiza. Diseño minimalista. Rendimiento extremo.</p>
+        <a href="#coleccion" class="btn-principal">Explorar Modelos</a>
+    </section>
+
+    <section class="seccion" id="coleccion">
+        <h3 class="titulo-seccion">Novedades de Temporada</h3>
+        <div class="grid-productos">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=500&q=80" alt="Reloj 1">
+                <h4>Phantom Black Edition</h4>
+                <p>Movimiento automático, Titanio Grado 5.</p>
+                <p class="precio">$1,250.00</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=500&q=80" alt="Reloj 2">
+                <h4>Silver Horizon</h4>
+                <p>Cristal de zafiro, Acero inoxidable 316L.</p>
+                <p class="precio">$890.00</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=500&q=80" alt="Reloj 3">
+                <h4>Oceanic Pro</h4>
+                <p>Resistencia 200m, Bisel cerámico.</p>
+                <p class="precio">$1,500.00</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-box">
+            <h4>Sobre Nosotros</h4>
+            <p>Redefiniendo el tiempo desde 2024 con piezas de alta ingeniería.</p>
+        </div>
+        <div class="footer-box">
+            <h4>Atención</h4>
+            <p>Garantía de 5 años</p>
+            <p>Envío Internacional Gratis</p>
+        </div>
+        <div class="footer-box">
+            <h4>Síguenos</h4>
+            <p>Instagram | Facebook | Twitter</p>
+        </div>
+    </footer>
+
+</body>
+</html>

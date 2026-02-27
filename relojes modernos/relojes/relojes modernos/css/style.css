@@ -1,0 +1,189 @@
+/* SISTEMA DE DISEÑO - TEMPO MODERNO 
+    Variables para fácil edición 
+*/
+:root {
+    --primary: #c5a059;       /* Dorado Champagne */
+    --bg-dark: #050505;      /* Negro profundo */
+    --bg-card: #111111;      /* Gris grafito para tarjetas */
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 1. RESET Y BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* 2. NAVEGACIÓN (Efecto Glassmorphism) */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.logo span { color: var(--primary); }
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 35px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* 3. HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1547996160-81dfa63595dd?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+/* 4. BOTÓN LUXURY */
+.btn-cta {
+    display: inline-block;
+    padding: 18px 45px;
+    border: 1px solid var(--primary);
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.btn-cta:hover {
+    color: var(--bg-dark);
+    background: var(--primary);
+    box-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
+}
+
+/* 5. GRID DE PRODUCTOS */
+.products-section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 60px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* 6. TARJETA DE RELOJ (Hover Effect) */
+.product-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border: 1px solid #1a1a1a;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    transition: var(--transition);
+}
+
+.product-card:hover img {
+    transform: scale(1.08);
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.product-card .price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* 7. SCROLLBAR PERSONALIZADO */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* 8. RESPONSIVIDAD */
+@media (max-width: 768px) {
+    header { padding: 20px 5%; }
+    nav { display: none; } /* Podrías añadir un menú hamburguesa aquí */
+    .hero-content h2 { font-size: 2.5rem; }
+}
